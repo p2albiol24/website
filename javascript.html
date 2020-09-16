@@ -1,0 +1,106 @@
+<hmtl>
+<head>
+
+
+<body bgcolor=#c5a43c>
+<border>
+<border border-color=#846837>
+<border border-type='double'>
+<border border-width=3px>
+<font color='white'>
+<font size=20px>
+<center>
+<h1> Javascript Testing </h1>
+<br><br></font></font>
+
+</head>
+<body>
+<font color='white'>
+<font size=5px>
+<center>
+The goal of this page is to display 4 foods in ABCD order when you click 'Test'. It will then repeat. <br><br>
+<script language="Javascript">
+
+var fruitsa= ["Apple", "Avocado", "Almond", "Acai"];
+var fruitsb= ["Blueberry", "Banana", "Blackberry", "Bell Pepper"];
+var fruitsc= ["Cantelope", "Cashew", "Cherry", "Canistel"];
+var fruitsd= ["Date", "Damson", "Dubious", "Durian"];
+var num=0;
+var mun=-1;
+var track=0;
+
+function reader(){
+
+	//if ( track ==0){
+		//var answer = prompt("What do you want to be called?");
+		//alert("Welcome, " + answer)
+		//}
+	mun+=1
+	if( num==0){
+		alert(fruitsa[mun]);
+		}
+	if( num==1){
+		alert(fruitsb[mun]);
+		}
+	if( num==2){
+		alert(fruitsc[mun]);
+		}
+	if( num==3){
+		alert(fruitsd[mun]);
+		alert("blastoff");
+		}
+	if( num==4){
+		num=-1
+		}
+	if( mun>2 ){
+		mun=-1
+		}
+	num+=1
+	
+}
+function test(){
+	alert("Hi");
+}
+
+</script>
+<center>
+<font color='white'>
+<font size=5px>
+
+<input type="button" value="Test!" onClick="reader()">
+
+</font>
+</font>
+</font>
+</font>
+</font>
+
+
+
+<br><br><br>
+<center>
+
+
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+</border>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
