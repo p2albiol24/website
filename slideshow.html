@@ -1,0 +1,47 @@
+<html>
+<head>
+
+<script language='javascript'>
+var picList = ["images/imagetitle.jpg", "images/slide0.jpg", "images/image1.jpg", "images/image2.jpg", "images/image3.jpg"]
+var clipList = ["sounds/audio.m4a", "sounds/Limelight.mp3", "sounds/RedBarchetta.mp3",  "sounds/TomSawyer.mp3"]
+var count = 0;
+
+function slide(){
+	var pic = document.getElementById("imagetitle");
+	var clip = document.getElementById("audio");
+	
+	pic.src = picList[count];
+	clip.src = clipList[count];
+	clip.play();
+	
+	count += 1;
+	if (count > 3) {
+		count = 0;
+	}
+}
+</script>
+</head>
+
+<body>
+<body bgcolor=#c5a43c>
+<border>
+<font color='white'>
+<font size=20px>
+<center>
+<h1> My Slideshow: Rush </h1>
+<br></font>
+
+<font size=5px>
+<img id="imagetitle" src = 'images/imagetitle.jpg'/>
+<audio id="audio" src = 'audio.m4a'> </audio>
+
+<br><br>
+
+<input type='button' value="Go" onClick="slide()">
+<br><br><br><br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+
+</body>
+
+
+</html>
