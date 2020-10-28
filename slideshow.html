@@ -2,8 +2,8 @@
 <head>
 
 <script language='javascript'>
-var picList = ["images/slide0.jpg", "images/image1.jpg", "images/image2.jpg", "images/image3.jpg", "images/image4.jpg"]
-var clipList = ["sounds/audio.m4a", "sounds/Limelight.mp3", "sounds/RedBarchetta.mp3",  "sounds/TomSawyer.mp3", "sounds/YYZ.mp3"]
+var picList = ["images/imagetitle.jpg", "images/slide0.jpg", "images/image1.jpg", "images/image2.jpg", "images/image3.jpg", "images/image4.jpg"]
+var clipList = ["sounds/audio.m4a", "sounds/Limelight.mp3", "sounds/RedBarchetta.mp3",  "sounds/TomSawyer.mp3" "sounds/YYZ.mp3"]
 var count = 0;
 
 function slide(){
@@ -15,7 +15,7 @@ function slide(){
 	clip.play();
 	
 	count += 1;
-	if (count > 4) {
+	if (count > 5) {
 		count = 0;
 	}
 }
@@ -37,7 +37,7 @@ function slide(){
 
 <br><br>
 
-<input type='button' value="Go" onClick="slide()">
+<input type='button' value="Go" onClick="slide()"/>
 <br><br><br><br>
 <a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
 
