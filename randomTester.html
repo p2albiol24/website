@@ -1,0 +1,131 @@
+<html>
+<center>
+
+
+<head>
+
+<script languague = "JavaScript">
+
+var userA = 0;
+var ans = ["The Third", "Mayhaps", "For Certainly",
+ "Quick I must tell ye before they get m-", 
+ "That is too personal, please ask another question.",
+ "My powers are fading! Add $10 to revive my powers and ye shall get an answer!"
+ , "Uhh, different question please.", "Eew!", 
+ "The Suneth Riseth and The Mooneth Setteth and Stilleth the frogeth croaketh. Mark, 20:20", 
+ "Focus not on the path, but on the Baguette, and enlightenment shall be upon ye. Mark, 20:20",
+ "The Lord Yeeteth and The Lord Yoinketh away. Mark, 20:20.",
+ "Seek out the bean, and ye journey shall. Mark, 20:20.", 
+ "Forseuth, the flambalin g'rae! Mark 20:20.", 
+ "Oar'inj, the new fruit shall be! Mark, 20:20.", 
+ "In 50 feet, your destination is on the left.", "I don't get the question.", 
+ "*yawn* Is it morning time? Did you bring pancakes? No? Let me go back to sleep; I am the mighty Kram Loibla.",
+ "I knoweth not.", "Crumpets!", "Flibbiltyjibits!", "NaN", "undefined", 
+ "It is decidedly so.", "Concentrate and ask again.", "My sources say no.",
+ "Signs point to yes.", "Yes - definitely.", "Very doubtful.", 
+ "Better not tell you now.", "The answer is, but it also isn't.",
+ "*silence* *cough cough* *crickets chirping*", "Add 1 1/2 tsp of active dry yeast.",
+ "A chocolate statue of Winston churchill covered in sea salt.", "Pumpkins!",
+ "Mhmm. You go girl!", "Run a marathon.", "Ye shan't be crestoffted!", 
+ "Scatter the ashes off the Southwest side of Mount Reineeer at precisely 2:53 pm using your grandfathers favorite ladle.",
+ "I must go to the bathroom, be back in a bit.", "Give me a 100% on this assignment please.",
+ "*gasp* He said whaaaaaat?", "*laughing* Are you serious?", "Halloween time!",
+ "Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam Spam and Eggs!"]
+ 
+var audio = ["sounds/skeletons.mp3"]
+document.getElementById("answer").style.visibility = "hidden";
+function random()
+{	
+
+	
+	document.getElementById("answer").style.visibility = "hidden";
+	var rand = -1;
+	var userQ = document.getElementById("question");
+	var myAnswer = document.getElementById("answer");
+	
+	rand = Math.random();
+	rand = rand * ans.length
+	rand = Math.floor(rand);
+
+	if (rand == 42){
+		var skeletons = document.getElementById("skeletons");
+		skeletons.src = audio[0];
+		skeletons.play();
+		
+	}
+
+
+		
+		
+	if ( userQ.value.length == 0 ){
+		document.getElementById("answer").style.visibility = "visible";
+		myAnswer.value = "There is no question there.";
+	}
+	else{
+		document.getElementById("answer").style.visibility = "visible";
+		myAnswer.value = ans[rand];
+		
+	}
+	
+}
+function reset() {
+
+	document.getElementById("question").value = "";
+	document.getElementById("answer").style.visibility = "hidden";
+}
+
+</script>
+
+<font color='white' size=20px face="">
+
+<h1>The Fate of You</h1>
+</font><br>
+<img src = 'images/ball.png'>
+<br>
+<font color='white' size=4px face="">
+<h2>Come Here All Who Seek Destiny</h2>
+</font>
+<font color='white' size=4px face="">
+<h3>Input ye question into the box below, press the button, and the mystical Kram Loibla <br>
+ shall awaken from his 10,000 year slumber, and answer with all the wisdom of his heart.</h3>
+</font>
+
+</head>
+
+
+
+<body>
+
+<body background='images/woodbk.jpg'>
+
+<center>
+
+
+<br><br><br>
+<input type = “text” size=90 id='question' onfocusin = 'reset()'/><br><br>
+
+<font color='white' size=4px face="">
+
+<input type="button" value="DESTINY" onClick="random()"/>
+<br>
+<br> Ye Output is:<br>
+
+</font>
+<br>
+
+<input type = “text” size=120 id='answer' style="visibility:hidden" readonly = "true"'/>
+
+<br><br>
+
+<audio id="skeletons" src = 'sounds/skeletons.mp3'> </audio>
+
+
+<br><br><br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+</center>
+
+</body>
+
+
+
+</html>
