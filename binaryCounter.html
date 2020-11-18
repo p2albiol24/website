@@ -1,0 +1,151 @@
+<html>
+
+<head>
+
+<script language="javaScript">
+
+var num = 0;
+var timer = 0;
+var clicked = false;
+var timo = 0;
+var count = 0;
+
+function stop(){
+	timo = 1;
+	document.getElementById("stop").value = "Nothing To Stop Yet";
+	document.getElementById("runStop").value = "Go";
+	timer = setTimeout("timo = 0;", 1000);
+
+}
+
+function auto(){
+	if (timo == 0){
+		document.getElementById("runStop").value = "Running";
+		document.getElementById("stop").value = "Stop";
+		add();
+		var timer = setTimeout("auto()", 1000);
+	}
+	else{
+}
+}
+
+function add(){
+	document.getElementById("count").value = num;
+	
+	count = num;
+	if ( count == 16) {
+		count = 0;
+		}
+	
+	
+	
+	if ( count - 8 > -1 ) {
+		document.getElementById("eights").src = "images/ledON.png";
+		count = count - 8;
+	}
+	else{
+		document.getElementById("eights").src = "images/ledOFF.png";
+
+	}
+	
+	
+	
+	if ( count - 4 > -1 ) {
+		document.getElementById("fours").src = "images/ledON.png";
+		count = count - 4;
+	}
+	else{
+		document.getElementById("fours").src = "images/ledOFF.png";
+	}
+
+
+
+	if ( count - 2 > -1 ) {
+		document.getElementById("twos").src = "images/ledON.png";
+		count = count - 2;
+	}
+	else{
+		document.getElementById("twos").src = "images/ledOFF.png";
+	}
+	
+	
+	
+	if ( count - 1 == 0 ) {
+		document.getElementById("ones").src = "images/ledON.png";
+
+	}
+	else{
+		document.getElementById("ones").src = "images/ledOFF.png";
+		
+	}	
+	num += 1;
+	
+	if ( num == 16) {
+		num = 0;
+		}
+	
+}
+
+
+
+</script>
+<head>
+<body bgcolor=#c5a43c>
+<center>
+<br><br><br><br>
+<font color='white'>
+<font size=5px>
+<h1> Binary Counter </h1>
+
+<input type = "button" value = "+1" onclick="add()"/>
+
+
+<input id="runStop" type = "button" value = "Go" onclick="auto()"/>
+<input id="stop" type = "button" value = "Nothing To Stop Yet" onclick="stop()"/><br/><br/>
+
+<input id="count" type = "text" size ="20" style="text-align:center" readonly = "true">
+
+
+
+
+
+
+
+
+<center>
+<div id="first" style="position:absolute; top:150; left: 600">
+
+2^0<br/>
+<img id="ones" src="images/ledOFF.png" width="50"/>
+
+</div>
+
+<div id="second" style="position:absolute; top:150; left: 500">
+
+2^1<br/>
+<img id="twos" src="images/ledOFF.png" width="50"/>
+
+</div>
+
+<div id="third" style="position:absolute; top:150; left: 400">
+
+2^2<br/>
+<img id="fours" src="images/ledOFF.png" width="50"/>
+
+</div>
+
+
+
+<div id="fourth" style="position:absolute; top:150; left: 300">
+
+2^3<br/>
+<img id="eights" src="images/ledOFF.png" width="50"/>
+
+</div>
+<br><br><br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+
+
+</center>
+</body>
+</html>
