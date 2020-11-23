@@ -1,0 +1,61 @@
+<html>
+<head>
+<script language='javaScript'>
+{
+var count = 1200;
+
+function animation(){
+	
+	var theGuy = document.getElementById("guy");
+	var position = theGuy.style.left;
+	
+	theGuy.style.visibility = "visible";
+	
+	count = count - 0.9;
+	position = count + 'px';
+
+	if (count < 550){
+		document.getElementById("guy").style.visibility = "hidden";
+		document.getElementById("guy").style.left = "1200px";
+		count = 1200;
+	}
+	else{
+		var timer = setTimeout("animation()", 1);
+		document.getElementById("guy").style.left = position;
+	}	
+	
+
+}
+
+
+}
+</script>
+</head>
+<body>
+<body bgcolor=#c5a43c>
+<border>
+<font color='white'>
+<font size=20px>
+<center>
+
+
+<h1> Animation</h1>
+
+<input id="push" type="button" value="Play" onClick="animation()"/>
+
+<br><br><br>
+
+
+<div id="setting" style="position:absolute; top:250; left:570">
+<img src="images/background.jpg" width=800/>
+</div>
+
+<div id="guy" style="position:absolute; top:500; left:1200; visibility:hidden" />
+<img src="images/walker.gif" width="150" />
+</div>
+<font size=10px>
+<br><br><br><br><br><br><br><br><br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+
+</body>
+</html>
