@@ -1,0 +1,149 @@
+<html>
+
+<head>
+
+<script language="JavaScript">
+var words = ["haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", "haha", ]
+var counter = 0;
+var timo = 0;
+var story = 4;
+var output = -1;
+
+function option1(){
+	story = 1;
+}
+function option2(){
+	story = 2;
+}
+function option3(){
+	story = 3;
+}
+function option4(){
+	story = 4;
+}
+
+
+function first()
+{
+	document.getElementById("check").style.visibility = "hidden";
+	document.getElementById("starter1").style.visibility = "hidden";
+	document.getElementById("starter2").style.visibility = "hidden";
+	document.getElementById("starter3").style.visibility = "hidden";
+	document.getElementById("starter4").style.visibility = "hidden";
+	document.getElementById("boxes").style.visibility = "visible";
+}
+
+function check(){
+	if ( document.getElementById("1").value.length == 0  || document.getElementById("2").value.length == 0 || document.getElementById("3").value.length == 0 || document.getElementById("4").value.length == 0 || document.getElementById("5").value.length == 0 || document.getElementById("6").value.length == 0 || document.getElementById("7").value.length == 0 || document.getElementById("8").value.length == 0 || document.getElementById("9").value.length == 0 || document.getElementById("10").value.length == 0 || document.getElementById("11").value.length == 0 || document.getElementById("12").value.length == 0 || document.getElementById("13").value.length == 0 || document.getElementById("14").value.length == 0 || document.getElementById("15").value.length == 0 || document.getElementById("16").value.length == 0 || document.getElementById("17").value.length == 0 || document.getElementById("18").value.length == 0 || document.getElementById("19").value.length == 0 || document.getElementById("20").value.length == 0 ){
+		alert("You must fill in all the boxes to proceed!");
+	}
+	else{
+		fill();
+	}
+}
+
+function fill(){
+	if (counter < 20){
+		words[counter] = document.getElementById(counter + 1).value;
+		counter ++;
+		fill();
+	}
+	else{
+		document.getElementById("boxes").style.visibility = "hidden";
+		document.getElementById("restarter").style.visibility = "visible";
+		
+		if (story == 1){
+			output = "One day, a(n) " + words[0] + " was " + words[9] + " around, when it came across a(n) " + words[1] + ". The " + words[1] + " suddenly started shaking, causing the " + words[0] + " to " + words[1]+ " away, fearing an explosion. When an explosion had not occurred, the " + words[0] + " looked back, and it turned out that there was a(n) " + words[12] + " " + words[2] + " just " + words[12] + " there! Well obviously, " + words[1] + " and " + words[0] + " " + words[11] +" away quickly, and never saw the " + words[12] + " " + words[2] + " again!";
+		}
+		if (story == 2){
+			output = "Just yesterday, a(n) " + words[0] + " was sitting on a front porch eating " + words[16] + ". All of a sudden, directly in front of " + words[0] + ", a massive, " + words[12] + ", " + words[13] + " fissure opened up! Out from the fissure emerged a bajillion " + words[5] + " that started to " + words[8] + "! With that, the " + words[0] + " wanted to escape, so it " + words[11] + " away, dropping " + words[1] + " all the way to " + words[3] + ". Once it arrived, it found that it was too late; the " + words[5] + " had already made it to " + words[3] + ", and were " + words[6] + " behind " + words[0] + ".";
+		}
+		if (story == 3){
+			output = "Dropped right into " + words[3] + ", " + words[0] + " was " + words[9] + " across the " + words[12] + " " + words[1] + ". " + words[0] + " received intel and orders from " + words[4] + ". “New position of " + words[12] + " " + words[5] + " at " + words[6] + " to the " + words[8]  +"! Orders are to " + words[8] + " on sight! Go Go Go!” Full of " + words[18] + ", " + words[0] + " " + words[11] + " " + words[8] + "ing left and right, and all the " + words[12] + " " + words[5] + " were " + words[19] + ". And thus ends the heroic and lifesaving story of Captain Private " + words[0] + ", who saved " + words[3] + " from " + words[5] + ".";
+		}
+		if (story == 4){
+			output = "Once upon a time in a land filled with " + words[5] + ", there was a king and a queen with a quite " + words[12] + " daughter. Because they were a new kingdom, they chose the name of it to be " + words[3] +". " + words[3] + " was a truly " + words[13] + " type of land, with many loyal " + words[5] +". Life existed " + words[15] + " for a long time, but one day, the armies of " + words[0] + " arrived, which " + words[11] + " the previously " + words[13] + " " + words[3] + ", and renamed it to " + words[4] + ". The royal family fled to an " + words[14] + " " + words[2] + " for refuge, and " + words[4] + " has remained the same ever since.";
+		}
+		
+		document.getElementById("sender").style.visibility = "visible";
+		document.getElementById("sender").value = output;
+	}
+}	
+
+function reset(){
+	document.getElementById("restarter").style.visibility = "hidden";
+	document.getElementById("check").style.visibility = "visible";
+	document.getElementById("starter1").style.visibility = "visible";
+	document.getElementById("starter2").style.visibility = "visible";
+	document.getElementById("starter3").style.visibility = "visible";
+	document.getElementById("starter4").style.visibility = "visible";
+	document.getElementById("boxes").style.visibility = "hidden";
+	document.getElementById("sender").value = "";
+	
+}
+</script>
+</head>
+
+<body>
+
+<body bgcolor=#c5a43c>
+<font color='white'>
+<font size=20px>
+<center>
+
+<h1>Mad Libs</h1>
+
+<textarea id="sender" cols="100" rows="6" type="text" style="text-align:center" readonly = "true" style="visibility:hidden"/>
+</textarea>
+<br><br>
+<input id="restarter" type="button" size="20" value="Again" onclick="reset()" style="visibility:hidden">  
+
+
+
+<font color='white' size=5px face="">
+<div id="check">
+<h2>Select your story, fill in the boxes with the corresponding types of words, and enjoy your story!</h2>
+
+<input id="starter1" type="button" size="20" value="Story 1" onclick="first() + option1()" style="visibility:visible">  
+<input id="starter2" type="button" size="20" value="Story 2" onclick="first() + option2()" style="visibility:visible">  
+<input id="starter3" type="button" size="20" value="Story 3" onclick="first() + option3()" style="visibility:visible">  
+<input id="starter4" type="button" size="20" value="Story 4" onclick="first() + option4()" style="visibility:visible">  
+
+
+
+</div>
+<font color='white' size=4px face="">
+
+
+
+
+<div id="boxes" style="visibility:hidden" >
+Noun 1: <input id="1" type="text" size="20"/><br/>
+Noun 2: <input id="2" type="text" size="20"/><br/>
+Noun 3: <input id="3" type="text" size="20"/><br/>
+Place 1:<input id="4" type="text" size="20"/><br/>
+Place 2: <input id="5" type="text" size="20"/><br/>
+Plural Noun: <input id="6" type="text" size="20"/><br/>
+Distance: <input id="7" type="text" size="20"/><br/>
+Direction: <input id="8" type="text" size="20"/><br/>
+Verb: <input id="9" type="text" size="20"/><br/>
+Verb Ending in Ing 1: <input id="10" type="text" size="20"/><br/>
+Verb Ending in Ing 2: <input id="11" type="text" size="20"/><br/>
+Verb Ending in Ed: <input id="12" type="text" size="20"/><br/>
+Adjective 1: <input id="13" type="text" size="20"/><br/>
+Adjective 2: <input id="14" type="text" size="20"/><br/>
+Adjective 3: <input id="15" type="text" size="20"/><br/>
+Adjective Ending in Ly: <input id="16" type="text" size="20"/><br/>
+Food: <input id="17" type="text" size="20"/><br/>
+Number: <input id="18" type="text" size="20"/><br/>
+Emotion 1: <input id="19" type="text" size="20"/><br/>
+Emotion 2: <input id="20" type="text" size="20"/><br/><br/><br/><br/>
+
+<input id="starter" type="button" size="20" value="Start!" onclick="check()"><br/>
+</div>
+
+
+<br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+<body>
+</html>
