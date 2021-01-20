@@ -1,0 +1,95 @@
+<html> 
+<head> 
+<script language="JavaScript">
+
+/*************** Algorithm ******************
+1. Take in what the user has selected
+2. Collect the number that is correlated to that option
+3. Select the fact that correlates with that number
+4. Set variable to fact
+5. Set output to variable
+6. Present output
+7. Loop
+
+*/
+
+
+var group = ["-- Choose a Category --", "Sports", "Mathematics", "Science", "Physiology", "Phsycology", "Literature", "Death", "Neurology"];
+
+var facts = ["-- No category selected --", "The earliest known sport is wrestling and dates back to over 15,000 years ago.", "Despite creating many mathematical principles and theorems, in Pythagoreus' time, arithmetic went no higher that counting.", " 'Science was invented when doctor Jimothy Von Science read Frankenstein in 1736 and decided to see why it was.' -Blamantha Grubinson & Wutz Appenin, 2001, Colorized", "Surprisingly, one nostril usually sucks in more air than the other, and these switch throughout the day.", "Scizophrenia has never been documented in blind people.", "The first book was written at least 3 years ago.", "You should never approach a beached whale, as hot gasses trapped inside can propell hunderds of pounds of whale meat into the air.", "While tired or not fully cognisant, brains usually exhibit higher creativity."];
+var i = 0;
+function loadData()
+{
+	var sum = 0;
+	for(i = 0; i<group.length; i++)
+    {
+        var daList = document.getElementById("category");
+  		var option = document.createElement("option");
+  		option.text = group[i];
+  		daList.add(option);
+    }
+	
+}
+
+// This function identifies which element from the drop down has been selected. It calls the 
+// getIndex function to acquire what the index of the selected item. Then it displays the 
+// corresponding element in the facts list. (This is diplayed in the textbox on the web page.)
+var num = 0;
+function start()
+{
+	
+	num = getIndex(document.getElementById("category").value);
+	document.getElementById("answer").size = facts[num].length - 8;
+	document.getElementById("answer").style.visibility = "visible";
+	document.getElementById("answer").value = facts[num];
+	
+	
+	
+}
+
+// This function searches the group array for the element passed as a parameter
+// and returns the index number for that element in the array.
+function getIndex(g)
+{
+	var ans = group.indexOf(g);
+	
+	/*
+	for (var i = 0; i < group.length; i++){
+		if (group[i] == g){
+			var ans = i
+		}
+	}
+	return ans;
+	*/
+	return ans;
+
+}
+
+
+
+</script>
+</head>
+<body onload="loadData()"> 
+<body bgcolor=#c5a43c>
+<center>
+<br><br><br><br>
+<font color='white'>
+<font size=5px>
+<h1>Fun Facts</h1>
+
+<br/><br/>
+<table border =3>
+	<tr>
+		<td>  	<select name="p1" id="category"  ></select> </td>
+		<td>	<input type = “text” size=0 id='answer' readonly = "true" style="visibility:hidden"/> </td>
+	</tr>
+</table>
+<br/><br/>
+<input type="button" value="click" onclick="start()"/>
+
+
+<br><br><br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+
+</body>
+</html>
