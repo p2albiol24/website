@@ -1,0 +1,158 @@
+<html> 
+<head> 
+<script language="JavaScript">
+{
+/*************** Algorithm ******************
+1. Display question from array
+2. Collect user answer
+3. If answer is same, award point. If not, don't
+4. Post next question
+5. Repeat
+6. Present score
+7. Loop6
+
+*/
+
+
+var questions = ["What is 3+5?", "Where is Argentina?", "What is NaCl commonly referred to as?", "What is a banana?", "What is the average speed of a maiden swallow?", "What does human taste like?", "Who was William Shakespear?", "Do all humans die?", "Approximately how large is your brain?", "What color is grass typically associated with?", "How well did you do on this test?"];
+
+var answersA = ["6", "Europe", "Salt", "A legume", "35 knots", "It likes dirt", "A dude", "No", "An elephant", "Geern", "8+ Correct"];
+var answersB = ["7", "Brazil", "Pepper", "A vegetable", "African or European?", "It likes fire", "A gal", "Yes", "A frogs hair", "Geren", "5-7 Correct"];
+var answersC = ["8", "South America", "and Oregano", "A fruit", "20 knots", "It likes rotting corpses", "A mermaid", "Maybe", "A jet liner", "Green", "2-4 Correct"];
+var answersD = ["9", "The Moon", "make a Pizza better", "A furniture", "Yellow", "It likes caloric foods", "A serpent", "No", "20 cubic centimeters", "Geenr", "0-1 Correct"];
+
+var answers = ["c", "c", "a", "c", "b", "d", "a", "b", "d", "c", "noo"];
+
+
+
+var counter = -1;
+
+//This displays the question
+function display()
+{
+	counter += 1;
+	document.getElementById("a").value = answersA[counter];
+	document.getElementById("b").value = answersB[counter];
+	document.getElementById("c").value = answersC[counter];
+	document.getElementById("d").value = answersD[counter];
+	document.getElementById("display").value = questions[counter];
+	
+}
+
+//this kicks off the code
+function start()
+{
+	
+	display();
+	document.getElementById("display").style.visibility = "visible";
+	document.getElementById("a").style.visibility = "visible";
+	document.getElementById("b").style.visibility = "visible";
+	document.getElementById("c").style.visibility = "visible";
+	document.getElementById("d").style.visibility = "visible";
+	document.getElementById("button").style.visibility = "hidden";
+	document.getElementById("button").value = "Continue";
+}
+
+
+
+//These next 4 functions set UserAnswer to the input
+var UserAnswer = "NOOOO";
+function selectA()
+{
+	UserAnswer = "a";
+	oogabooga();
+}
+function selectB()
+{
+	UserAnswer = "b";
+	oogabooga();
+}
+function selectC()
+{
+	UserAnswer = "c";
+	oogabooga();
+}
+function selectD()
+{
+	UserAnswer = "d";
+	oogabooga();
+}
+
+
+//This reveals if it is correct or not
+var score = 0;
+
+function oogabooga()
+{
+	if (counter == 10)
+	{
+		 if (score > 7)
+		 {
+			answers[10] = "a"
+		 }
+		 //For the next few I put an elif and wondered for like 10 minutes why it wasn't working
+		 else if (score > 4 && score < 8 )
+		 {
+			answers[10] = "b"
+		 }
+		 else if (score > 1 && score < 5 )
+		 {
+			answers[10] = "c"
+		 }
+		 else if (score < 2)
+		 {
+			answers[10] = "d"
+		 }
+		 
+		 score --
+		 document.getElementById("button").value = "Restart";
+		 var timer = setTimeout("reset()", 10);
+	}
+
+
+	document.getElementById("a").style.visibility = "hidden";
+	document.getElementById("b").style.visibility = "hidden";
+	document.getElementById("c").style.visibility = "hidden";
+	document.getElementById("d").style.visibility = "hidden";
+	document.getElementById("button").style.visibility = "visible";
+	
+	if ( UserAnswer == answers[counter] ){
+		score ++;
+		document.getElementById("display").value = "Correct! Your score is " + score;
+	}
+	else{
+		document.getElementById("display").value = "Incorrect! Your score is " + score;
+	}
+}
+//Resetter
+function reset()
+{
+	counter = -1;
+	score = 0
+}
+}
+</script>
+</head>
+<body onload="loadData()"> 
+<body bgcolor=#c5a43c>
+<center>
+<br><br><br><br>
+<font color='white'>
+<font size=5px>
+<h1>Quiz</h1>
+
+<br/><br/>
+<input type="text" id="display" value="youshouldntbeseeingthis" readonly = "true" style="visibility:hidden" size = "60"> <br> <br> <br> <br>
+<input type="button" id="a" value="youshouldntbeseeingthis" onclick="selectA()" style="visibility:hidden"/><br><br>
+<input type="button" id="b" value="youshouldntbeseeingthis" onclick="selectB()" style="visibility:hidden"/><br><br>
+<input type="button" id="c" value="youshouldntbeseeingthis" onclick="selectC()" style="visibility:hidden"/><br><br>
+<input type="button" id="d" value="youshouldntbeseeingthis" onclick="selectD()" style="visibility:hidden"/><br>
+<br/><br/>
+<input type="button" id="button" value="Start" onclick="start()" style="visibility:visible"/>
+
+
+<br><br><br>
+<a href = 'index.html'><font color='#D0B1EA'> Take Me Back to the Index Site! </a>
+
+</body>
+</html>
