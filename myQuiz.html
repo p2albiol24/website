@@ -57,26 +57,14 @@ function start()
 
 //These next 4 functions set UserAnswer to the input
 var UserAnswer = "NOOOO";
-function selectA()
+
+
+function selectAnswer(x)
 {
-	UserAnswer = "a";
+	UserAnswer = x;
 	oogabooga();
 }
-function selectB()
-{
-	UserAnswer = "b";
-	oogabooga();
-}
-function selectC()
-{
-	UserAnswer = "c";
-	oogabooga();
-}
-function selectD()
-{
-	UserAnswer = "d";
-	oogabooga();
-}
+
 
 
 //This reveals if it is correct or not
@@ -143,10 +131,10 @@ function reset()
 
 <br/><br/>
 <input type="text" id="display" value="youshouldntbeseeingthis" readonly = "true" style="visibility:hidden" size = "60"> <br> <br> <br> <br>
-<input type="button" id="a" value="youshouldntbeseeingthis" onclick="selectA()" style="visibility:hidden"/><br><br>
-<input type="button" id="b" value="youshouldntbeseeingthis" onclick="selectB()" style="visibility:hidden"/><br><br>
-<input type="button" id="c" value="youshouldntbeseeingthis" onclick="selectC()" style="visibility:hidden"/><br><br>
-<input type="button" id="d" value="youshouldntbeseeingthis" onclick="selectD()" style="visibility:hidden"/><br>
+<input type="button" id="a" value="youshouldntbeseeingthis" onclick="selectAnswer('a')" style="visibility:hidden"/><br><br>
+<input type="button" id="b" value="youshouldntbeseeingthis" onclick="selectAnswer('b')" style="visibility:hidden"/><br><br>
+<input type="button" id="c" value="youshouldntbeseeingthis" onclick="selectAnswer('c')" style="visibility:hidden"/><br><br>
+<input type="button" id="d" value="youshouldntbeseeingthis" onclick="selectAnswer('d')" style="visibility:hidden"/><br>
 <br/><br/>
 <input type="button" id="button" value="Start" onclick="start()" style="visibility:visible"/>
 
